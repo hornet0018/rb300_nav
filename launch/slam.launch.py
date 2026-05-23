@@ -10,7 +10,7 @@ def generate_launch_description():
 
     slam_toolbox_node = Node(
         package='slam_toolbox',
-        executable='online_async_node',
+        executable='async_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
         parameters=[config_file],
