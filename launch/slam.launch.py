@@ -8,14 +8,17 @@ def generate_launch_description():
     pkg_dir = get_package_share_directory('rb300_nav')
     config_file = os.path.join(pkg_dir, 'config', 'slam_toolbox.yaml')
 
-    slam_toolbox_node = Node(
-        package='slam_toolbox',
-        executable='async_slam_toolbox_node',
-        name='slam_toolbox',
+    slam_controller_node = Node(
+        package='rb300_nav',
+        executable='slam_controller.py',
+        name='slam_controller',
         output='screen',
-        parameters=[config_file],
+        parameters=[{
+            'slam_params_file': config_file,
+            'command_topic': '/rb300_webui/slam_command',
+        }],
     )
 
     return LaunchDescription([
-        slam_toolbox_node,
+        slam_controller_node,
     ])
