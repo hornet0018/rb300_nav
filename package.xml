@@ -13,6 +13,8 @@
   <depend>launch_ros</depend>
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>cartographer_ros_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
